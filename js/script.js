@@ -12,12 +12,18 @@ const playerResult = document.querySelector('.result-container__player')
 const computerResult = document.querySelector('.result-container__computer')
 const infoAboutWin = document.querySelector('.result-container__info')
 const playAgainBtn = document.querySelector('.result-container__play-again-btn')
-
 let computerChose
 let playerChose
-let scoreSum = localStorage.getItem('score')
-const a = localStorage.getItem('score')
-score.textContent = `${scoreSum}`
+
+scoreSum = 0
+score.textContent = scoreSum
+if (localStorage.score) {
+	localStorage.getItem('score')
+	localStorage.setItem('score', scoreSum + parseFloat(localStorage.score))
+	score.textContent = localStorage.score
+} else {
+	localStorage.setItem('score', scoreSum)
+}
 
 const choiceList = ['rock', 'paper', 'scissors']
 const showRules = () => {
@@ -67,8 +73,14 @@ const game = () => {
 	}, 1000)
 	setTimeout(() => {
 		score.textContent = `${scoreSum}`
+		if (localStorage.score) {
+			localStorage.getItem('score')
+			localStorage.setItem('score', scoreSum + parseFloat(localStorage.score))
+			score.textContent = localStorage.score
+		} else {
+			localStorage.setItem('score', scoreSum)
+		}
 	}, 1200)
-	localStorage.setItem('score', scoreSum)
 }
 
 const computerChoice = () => {
