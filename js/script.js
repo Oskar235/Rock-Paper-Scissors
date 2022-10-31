@@ -15,12 +15,11 @@ const playAgainBtn = document.querySelector('.result-container__play-again-btn')
 let computerChose
 let playerChose
 
-scoreSum = 0
+let scoreSum = 0
 score.textContent = scoreSum
 if (localStorage.score) {
-	localStorage.getItem('score')
-	localStorage.setItem('score', scoreSum + parseFloat(localStorage.score))
 	score.textContent = localStorage.score
+	scoreSum = localStorage.score
 } else {
 	localStorage.setItem('score', scoreSum)
 }
@@ -65,6 +64,8 @@ const playerChoseRock = () => {
 }
 
 const game = () => {
+	const previousScore = scoreSum
+
 	showResults()
 	playerChoice()
 	setTimeout(computerChoice(), 500)
@@ -73,13 +74,7 @@ const game = () => {
 	}, 1000)
 	setTimeout(() => {
 		score.textContent = `${scoreSum}`
-		if (localStorage.score) {
-			localStorage.getItem('score')
-			localStorage.setItem('score', scoreSum + parseFloat(localStorage.score))
-			score.textContent = localStorage.score
-		} else {
-			localStorage.setItem('score', scoreSum)
-		}
+		localStorage.score = scoreSum
 	}, 1200)
 }
 
