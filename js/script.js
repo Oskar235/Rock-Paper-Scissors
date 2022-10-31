@@ -15,7 +15,8 @@ const playAgainBtn = document.querySelector('.result-container__play-again-btn')
 
 let computerChose
 let playerChose
-let scoreSum = 0
+let scoreSum = localStorage.getItem('score')
+const a = localStorage.getItem('score')
 score.textContent = `${scoreSum}`
 
 const choiceList = ['rock', 'paper', 'scissors']
@@ -67,6 +68,7 @@ const game = () => {
 	setTimeout(() => {
 		score.textContent = `${scoreSum}`
 	}, 1200)
+	localStorage.setItem('score', scoreSum)
 }
 
 const computerChoice = () => {
@@ -85,7 +87,6 @@ const computerChoice = () => {
 }
 
 const checkWin = () => {
-	console.log(computerChose, playerChose)
 	if (computerChose === playerChose) {
 		infoAboutWin.textContent = 'draw'
 	} else if (playerChose === 'rock') {
