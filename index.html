@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="score_label">
+      <h1 class="score_label__title">rock <br> paper <br> scissors</h1>
+      <div class="score_label__counter">
+        <p class="score_label__title-2">score</p>
+        <p class="score_label__count"></p>
+      </div>
+    </div>
+    <div class="options-container options-container--active">
+      <img src="./images/bg-triangle.svg" class="options-container__triangle" alt="">
+
+      <div class="options-container__item options-container__paper">
+        <img src="./images/icon-paper.svg" class="options-container__paper-icon" alt="">
+      </div>
+
+      <div class="options-container__item options-container__scissors">
+        <img src="./images/icon-scissors.svg" class="options-container__scissors-icon" alt="">
+      </div>
+
+      <div class="options-container__item options-container__rock">
+        <img src="./images/icon-rock.svg" class="options-container__rock-icon" alt="">
+      </div>
+    </div>
+
+    <div class="result-container result-container--hide">
+
+      <div class="result-container__item result-container__player ">
+        <p class="result-container__text result-container__text--player">you picked</p>
+      </div>
+
+      <div class="result-container__item result-container__computer result-container__computer--shadow">
+        <p class="result-container__text result-container__text--computer">the house picked</p>
+      </div>
+
+
+      <h2 class="result-container__info">do zmiany</h2>
+      <button class="result-container__play-again-btn">play again</button>
+
+    </div>
+
+    <div class="rules">
+      <h2 class="rules__title">rules</h2>
+      <img src="./images/image-rules.svg" class="rules__img" alt="">
+      <button class="rules__close-btn"><img src="./images/icon-close.svg" alt=""></button>
+    </div>
+    <div class="rules__shadow rules__shadow--hide"></div>
+
+    <button class="rules-btn">rules</button>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
